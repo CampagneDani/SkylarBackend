@@ -1,2 +1,2 @@
 Für die Nutzung muss folgendes eingestellt werden:
-- in application.properties: richtige Databank einbinden
+- in "application.properties": richtige Datenbank einbinden
