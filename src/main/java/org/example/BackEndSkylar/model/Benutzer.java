@@ -1,6 +1,7 @@
 package org.example.BackEndSkylar.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
 
 @Entity
@@ -25,6 +26,7 @@ public class Benutzer implements Serializable {
         this.password = password;
         this.email = email;
     }
+    private Date heute = new Date(2022, 10, 06);
 
     public Long getId() {
         return id;
