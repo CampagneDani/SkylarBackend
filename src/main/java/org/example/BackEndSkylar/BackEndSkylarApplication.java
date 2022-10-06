@@ -16,6 +16,9 @@ public class BackEndSkylarApplication {
 		SpringApplication.run(BackEndSkylarApplication.class, args);
 	}
 
+
+
+
 	@Bean
 	public CorsFilter corsFilter(){
 		CorsConfiguration corsConfiguration = new CorsConfiguration();

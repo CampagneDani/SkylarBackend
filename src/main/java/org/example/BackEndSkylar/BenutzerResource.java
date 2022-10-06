@@ -18,19 +18,19 @@ public class BenutzerResource {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping()
     public ResponseEntity<List<Benutzer>> getAllBenutzer(){
         List<Benutzer> benutzer = benutzerService.findAllBenutzer();
         return new ResponseEntity<>(benutzer, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Benutzer> getBenutzerById(@PathVariable("id") Long id){
         Benutzer benutzer = benutzerService.findBenutzerById(id);
         return new ResponseEntity<>(benutzer, HttpStatus.OK);
     }
 
-    @PostMapping("/add")
+    @PostMapping()
     public ResponseEntity<Benutzer> addBenutzer(@RequestBody Benutzer benutzer){
         Benutzer neuerBenutzer = benutzerService.addBenutzer(benutzer);
         return new ResponseEntity<>(neuerBenutzer, HttpStatus.CREATED);
@@ -42,7 +42,7 @@ public class BenutzerResource {
         return new ResponseEntity<>(updateBenutzer, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteBenutzer(@PathVariable("id") Long id){
         benutzerService.deleteBenutzer(id);
         return new ResponseEntity<>(HttpStatus.OK);
