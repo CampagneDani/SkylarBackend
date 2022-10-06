@@ -3,6 +3,7 @@ package org.example.BackEndSkylar.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+@Entity
 public class Benutzer implements Serializable {
 
     @Id
