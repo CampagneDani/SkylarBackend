@@ -1,9 +1,15 @@
 package org.example.BackEndSkylar.model;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
+@Entity
+public class Booking implements Serializable {
 
-public class Booking {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private Long id;
     private Date date;
     private Double value;
     private Budget assignedBudget;
@@ -12,13 +18,22 @@ public class Booking {
     private BankAccount assignedBankAccount;
 
 
-    public Booking(Date date, Double value, Budget assignedBudget, User assignedUser, Project assignedProject, BankAccount assignedBankAccount) {
+    public Booking(Long id, Date date, Double value, Budget assignedBudget, User assignedUser, Project assignedProject, BankAccount assignedBankAccount) {
+        this.id = id;
         this.date = date;
         this.value = value;
         this.assignedBudget = assignedBudget;
         this.assignedUser = assignedUser;
         this.assignedProject = assignedProject;
         this.assignedBankAccount = assignedBankAccount;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public BankAccount getAssignedBankAccount() {

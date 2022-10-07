@@ -1,9 +1,15 @@
 package org.example.BackEndSkylar.model;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+@Entity
+public class Budget implements Serializable {
 
-public class Budget {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private Long id;
     private Date startDate;
     private Date endDate;
     private Double value;
