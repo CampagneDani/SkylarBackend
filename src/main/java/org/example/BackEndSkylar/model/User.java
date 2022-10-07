@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-public class Benutzer implements Serializable {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,15 +18,15 @@ public class Benutzer implements Serializable {
 
 
 
-    public Benutzer(){}
+    public User(){}
 
-    public Benutzer(Long id, String username, String password, String email) {
+    public User(Long id, String username, String password, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
     }
-    private Date heute = new Date(2022, 10, 06);
+
 
     public Long getId() {
         return id;
@@ -63,7 +63,7 @@ public class Benutzer implements Serializable {
 
     @Override
     public String toString(){
-        return "Benutzer{" +
+        return "User{" +
                 "id= "+ id +
                 ", email= " + email +
                 ", password= " + password +
