@@ -1,28 +1,26 @@
 package org.example.BackEndSkylar.service;
 
-import org.example.BackEndSkylar.exception.UserNotFoundException;
+import org.example.BackEndSkylar.model.AuthToken;
 import org.example.BackEndSkylar.model.Login;
 import org.example.BackEndSkylar.model.LoginResponse;
 import org.example.BackEndSkylar.model.User;
-import org.example.BackEndSkylar.repo.LoginTokenRepo;
 import org.example.BackEndSkylar.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
 public class LoginService {
 
-    private final LoginTokenRepo loginRepo;
     private final UserRepo userRepo;
 
 
     @Autowired
-    public LoginService(UserRepo userRepo, LoginTokenRepo loginRepo){
+    public LoginService(UserRepo userRepo){
         this.userRepo = userRepo;
-        this.loginRepo = loginRepo;
+
     }
 
 
@@ -30,11 +28,13 @@ public class LoginService {
         return userRepo.save(user);
     }
 
-    public LoginResponse login(Login loginData){
+    public AuthToken login(Login loginData){
         Optional<User> user = this.userRepo.findUserByUsername(loginData.username);
-        //password abgleich
-        //wenn pw t =nich> error response
-        //wenn übereinstimmt =>  loginToken wird generiert (zufällige Stringkette)
+        User properUser = user.get();
+        if (Objects.equals(properUser.getPassword(), loginData.password)){
+            return new AuthToken(properUser.getUsername(),properUser.getPassword(),properUser.getRole());
+        }
+
         //loginToken muss dann in der DB abgespeichtert werden
         //loginResponse wird returned
         //Jeder user 1 rolle 1 zu 1, Response gibt die Rolle mit, dh Rolle muss ausgelesen werden und mitzurückgeben

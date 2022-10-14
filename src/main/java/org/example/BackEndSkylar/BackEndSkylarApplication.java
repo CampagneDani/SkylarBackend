@@ -16,6 +16,8 @@ public class BackEndSkylarApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackEndSkylarApplication.class, args);
+
+
 	}
 
 
