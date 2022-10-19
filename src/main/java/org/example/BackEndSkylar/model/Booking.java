@@ -3,17 +3,22 @@ package org.example.BackEndSkylar.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-//@Entity
+@Entity
 public class Booking implements Serializable {
 
-    //@Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
-    // @Column(nullable = false, updatable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
     private Long id;
     private Date date;
     private Double value;
     private Budget assignedBudget;
+
+    @OneToOne
+    @JoinColumn(name = "assigned_user_id")
     private User assignedUser;
+    @OneToOne
+    @JoinColumn(name = "assigned_project_id")
     private Project assignedProject;
     private BankAccount assignedBankAccount;
 
