@@ -12,14 +12,20 @@ public class Booking implements Serializable {
     private Long id;
     private Date date;
     private Double value;
+
+    @OneToOne
+    @JoinColumn(name = "assigned_budget_id")
     private Budget assignedBudget;
 
     @OneToOne
     @JoinColumn(name = "assigned_user_id")
     private User assignedUser;
+
     @OneToOne
     @JoinColumn(name = "assigned_project_id")
     private Project assignedProject;
+    @OneToOne
+    @JoinColumn(name = "assigned_bank_account_id")
     private BankAccount assignedBankAccount;
 
     public Booking() {}

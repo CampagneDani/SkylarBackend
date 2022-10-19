@@ -12,11 +12,17 @@ public class Project implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long id;
+
     @OneToOne
     @JoinColumn(name = "assigned_bugdet_id")
     private Budget assignedBugdet;
 
+    @ManyToOne
+    @JoinColumn(name = "assigend_user_id")
     private User[] assigendUsers;
+
+    @ManyToOne
+    @JoinColumn(name = "assigned_Booking_id")
     private Booking[] assigendBookings;
 
 

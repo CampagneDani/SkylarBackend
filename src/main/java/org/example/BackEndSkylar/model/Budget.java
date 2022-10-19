@@ -15,6 +15,7 @@ public class Budget implements Serializable {
     private Double value;
     private Boolean authorized;
 
+
     public Budget(){}
     public Budget(Date startDate, Date endDate, Double value, Boolean authorized) {
         this.startDate = startDate;
