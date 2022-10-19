@@ -15,6 +15,9 @@ public class Budget implements Serializable {
     private Double value;
     private Boolean authorized;
 
+    @OneToOne
+    @JoinColumn(name = "assigned_Project_id")
+    private Project assignedProject;
 
     public Budget(){}
     public Budget(Date startDate, Date endDate, Double value, Boolean authorized) {
@@ -22,6 +25,22 @@ public class Budget implements Serializable {
         this.endDate = endDate;
         this.value = value;
         this.authorized = authorized;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Project getAssignedProject() {
+        return assignedProject;
+    }
+
+    public void setAssignedProject(Project assignedProject) {
+        this.assignedProject = assignedProject;
     }
 
     public Date getStartDate() {

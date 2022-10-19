@@ -35,6 +35,14 @@ public class Project implements Serializable {
         this.assigendBookings = assigendBookings;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Budget getAssignedBugdet() {
         return assignedBugdet;
     }

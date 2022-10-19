@@ -1,5 +1,7 @@
 package org.example.BackEndSkylar.model;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+
 import java.io.Serializable;
 import javax.persistence.*;
 
