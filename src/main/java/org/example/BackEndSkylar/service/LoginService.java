@@ -35,9 +35,6 @@ public class LoginService {
             return new AuthToken(properUser.getUsername(),properUser.getPassword(),properUser.getRole());
         }
 
-        //loginToken muss dann in der DB abgespeichtert werden
-        //loginResponse wird returned
-        //Jeder user 1 rolle 1 zu 1, Response gibt die Rolle mit, dh Rolle muss ausgelesen werden und mitzurückgeben
         return null;
     }
 

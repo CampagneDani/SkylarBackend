@@ -31,7 +31,9 @@ public class UserService {
         return userRepo.findUserById(id).orElseThrow(() -> new UserNotFoundException("User by id "+ id + "was not found"));
     }
 
-    public User updateUser(User user){
+    public User updateUser(Long id,User user){
+        User updatedUser = user;
+        updatedUser.setId(id);
         return userRepo.save(user);
     }
 

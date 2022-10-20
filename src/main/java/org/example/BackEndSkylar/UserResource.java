@@ -36,9 +36,9 @@ public class UserResource {
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<User> updateUser(@RequestBody User user){
-        User updateUser = userService.updateUser(user);
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable("id") Long id,@RequestBody User user){
+        User updateUser = userService.updateUser(id,user);
         return new ResponseEntity<>(updateUser, HttpStatus.OK);
     }
 

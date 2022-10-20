@@ -14,17 +14,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/login")
 public class LoginResource {
 
-
     private final LoginService loginService;
-
 
     @Autowired
     public LoginResource(LoginService loginService){
         this.loginService = loginService;
-
-
     }
-
     @PostMapping()
     public AuthToken login(@RequestBody Login login){
         return loginService.login(login);
