@@ -18,6 +18,17 @@ public class User implements Serializable {
     private String email;
     private String role;
 
+    @ManyToOne
+    @JoinColumn(name = "assigend_Bookings_id")
+    private Booking[] assigendBookings;
+
+    @ManyToOne
+    @JoinColumn(name= "assigned_Projects_id")
+    private Project[] assignedProjects;
+
+
+
+
 
     public User(){}
 

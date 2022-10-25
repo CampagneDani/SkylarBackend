@@ -19,12 +19,30 @@ public class Budget implements Serializable {
     @JoinColumn(name = "assigned_Project_id")
     private Project assignedProject;
 
+    @ManyToOne
+    @JoinColumn(name = "assigned_Bookings_id")
+    private Booking[] assignedBookings;
+
+
+
     public Budget(){}
-    public Budget(Date startDate, Date endDate, Double value, Boolean authorized) {
+
+    public Budget(Long id, Date startDate, Date endDate, Double value, Boolean authorized, Project assignedProject, Booking[] assignedBookings) {
+        this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.value = value;
         this.authorized = authorized;
+        this.assignedProject = assignedProject;
+        this.assignedBookings = assignedBookings;
+    }
+
+    public Booking[] getAssigendBookings() {
+        return assignedBookings;
+    }
+
+    public void setAssigendBookings(Booking[] assigendBookings) {
+        this.assignedBookings = assigendBookings;
     }
 
     public Long getId() {

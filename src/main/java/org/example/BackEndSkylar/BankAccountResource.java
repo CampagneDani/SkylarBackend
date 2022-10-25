@@ -1,7 +1,6 @@
 package org.example.BackEndSkylar;
 
 import org.example.BackEndSkylar.model.BankAccount;
-import org.example.BackEndSkylar.model.User;
 import org.example.BackEndSkylar.service.BankAccountService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

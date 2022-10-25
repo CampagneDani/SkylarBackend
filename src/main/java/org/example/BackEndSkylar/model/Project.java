@@ -1,7 +1,5 @@
 package org.example.BackEndSkylar.model;
 
-import jdk.jfr.Enabled;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -19,21 +17,24 @@ public class Project implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "assigend_user_id")
-    private User[] assigendUsers;
+    private User[] assignedUsers;
 
     @ManyToOne
-    @JoinColumn(name = "assigned_Booking_id")
-    private Booking[] assigendBookings;
+    @JoinColumn(name = "assigned_Bookings_id")
+    private Booking[] assignedBookings;
 
 
     public Project() {
     }
 
-    public Project(Budget assignedBugdet, User[] assigendUsers, Booking[] assigendBookings) {
+    public Project(Budget assignedBugdet, User[] assignedUsers, Booking[] assignedBookings) {
         this.assignedBugdet = assignedBugdet;
-        this.assigendUsers = assigendUsers;
-        this.assigendBookings = assigendBookings;
+        this.assignedUsers = assignedUsers;
+        this.assignedBookings = assignedBookings;
     }
+
+
+
 
     public Long getId() {
         return id;
@@ -51,19 +52,19 @@ public class Project implements Serializable {
         this.assignedBugdet = assignedBugdet;
     }
 
-    public User[] getAssigendUsers() {
-        return assigendUsers;
+    public User[] getAssignedUsers() {
+        return assignedUsers;
     }
 
-    public void setAssigendUsers(User[] assigendUsers) {
-        this.assigendUsers = assigendUsers;
+    public void setAssignedUsers(User[] assigendUsers) {
+        this.assignedUsers = assigendUsers;
     }
 
-    public Booking[] getAssigendBookings() {
-        return assigendBookings;
+    public Booking[] getAssignedBookings() {
+        return assignedBookings;
     }
 
-    public void setAssigendBookings(Booking[] assigendBookings) {
-        this.assigendBookings = assigendBookings;
+    public void setAssignedBookings(Booking[] assigendBookings) {
+        this.assignedBookings = assigendBookings;
     }
 }

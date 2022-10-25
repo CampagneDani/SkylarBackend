@@ -11,6 +11,9 @@ public class BankAccount {
     private Long id;
     private Double saldo;
 
+    @ManyToOne
+    @JoinColumn(name= "assigned_Bookings_id")
+    private Booking[] assigendBookings;
 
 
     public BankAccount(){}

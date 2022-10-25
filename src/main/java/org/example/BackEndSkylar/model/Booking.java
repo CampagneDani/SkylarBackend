@@ -3,6 +3,8 @@ package org.example.BackEndSkylar.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
+
 @Entity
 public class Booking implements Serializable {
 
@@ -16,7 +18,6 @@ public class Booking implements Serializable {
     @OneToOne
     @JoinColumn(name = "assigned_budget_id")
     private Budget assignedBudget;
-
     @OneToOne
     @JoinColumn(name = "assigned_user_id")
     private User assignedUser;
@@ -39,6 +40,7 @@ public class Booking implements Serializable {
         this.assignedProject = assignedProject;
         this.assignedBankAccount = assignedBankAccount;
     }
+
 
     public Long getId() {
         return id;
