@@ -15,8 +15,34 @@ public class BankAccount {
     @JoinColumn(name= "assigned_Bookings_id")
     private Booking[] assigendBookings;
 
+    @ManyToOne
+    @JoinColumn(name= "assigned_Users_id")
+    private User[] assignedUsers;
+
+    public BankAccount(Long id, Double saldo, Booking[] assigendBookings, User[] assignedUsers) {
+        this.id = id;
+        this.saldo = saldo;
+        this.assigendBookings = assigendBookings;
+        this.assignedUsers = assignedUsers;
+    }
 
     public BankAccount(){}
+
+    public Booking[] getAssigendBookings() {
+        return assigendBookings;
+    }
+
+    public void setAssigendBookings(Booking[] assigendBookings) {
+        this.assigendBookings = assigendBookings;
+    }
+
+    public User[] getAssignedUsers() {
+        return assignedUsers;
+    }
+
+    public void setAssignedUsers(User[] assignedUsers) {
+        this.assignedUsers = assignedUsers;
+    }
 
     public Long getId() {
         return id;
