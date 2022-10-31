@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface BankAccountRepo extends JpaRepository<BankAccount, Long> {
 
-    void deleteBankAccountById(Long id);
+    void delete(BankAccount bankAccount);
 
     Optional<BankAccount> findBankAccountById(Long id);
 

@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface BudgetRepo extends JpaRepository<Budget, Long> {
 
-    void deleteBudgetById(Long id);
+    void delete(Budget budget);
 
     Optional<Budget> findBudgetById(Long id);
 }

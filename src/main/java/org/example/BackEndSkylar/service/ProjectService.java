@@ -37,7 +37,7 @@ public class ProjectService {
     }
 
     public void deleteProject(Long id){
-        projectRepo.deleteProjectById(id);
+        projectRepo.delete(findProjectById(id));
     }
 
 }

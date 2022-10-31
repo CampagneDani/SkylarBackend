@@ -36,7 +36,7 @@ public class BookingService {
     }
 
     public void deleteBooking(Long id){
-        bookingRepo.deleteBookingById(id);
+        bookingRepo.delete(findBookingById(id));
     }
 
 

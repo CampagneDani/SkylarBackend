@@ -36,7 +36,7 @@ public class BankAccountService {
     }
 
     public void deleteBankAccount(Long id){
-        bankAccountRepo.deleteBankAccountById(id);
+        bankAccountRepo.delete(findBankAccountById(id));
     }
 
 

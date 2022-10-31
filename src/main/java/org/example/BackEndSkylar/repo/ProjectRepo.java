@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ProjectRepo extends JpaRepository<Project, Long> {
 
-    void deleteProjectById(Long id);
+    void delete(Project project);
 
     Optional<Project> findProjectById(Long id);
 }
