@@ -15,32 +15,25 @@ public class Booking implements Serializable {
     private Date date;
     private Double value;
 
-    @OneToOne
     @JoinColumn(name = "assigned_budget_id")
-    private Budget assignedBudget;
-    @OneToOne
-    @JoinColumn(name = "assigned_user_id")
-    private User assignedUser;
+    private Long assigned_budget_id;
 
-    @OneToOne
     @JoinColumn(name = "assigned_project_id")
-    private Project assignedProject;
-    @OneToOne
+    private Long assigned_project_id;
+
     @JoinColumn(name = "assigned_bank_account_id")
-    private BankAccount assignedBankAccount;
+    private Long assigned_bank_account_id;
 
     public Booking() {}
 
-    public Booking(Long id, Date date, Double value, Budget assignedBudget, User assignedUser, Project assignedProject, BankAccount assignedBankAccount) {
+    public Booking(Long id, Date date, Double value, Long assigned_budget_id, Long assigned_project_id, Long assigned_bank_account_id) {
         this.id = id;
         this.date = date;
         this.value = value;
-        this.assignedBudget = assignedBudget;
-        this.assignedUser = assignedUser;
-        this.assignedProject = assignedProject;
-        this.assignedBankAccount = assignedBankAccount;
+        this.assigned_budget_id = assigned_budget_id;
+        this.assigned_project_id = assigned_project_id;
+        this.assigned_bank_account_id = assigned_bank_account_id;
     }
-
 
     public Long getId() {
         return id;
@@ -48,14 +41,6 @@ public class Booking implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public BankAccount getAssignedBankAccount() {
-        return assignedBankAccount;
-    }
-
-    public void setAssignedBankAccount(BankAccount assignedBankAccount) {
-        this.assignedBankAccount = assignedBankAccount;
     }
 
     public Date getDate() {
@@ -74,27 +59,27 @@ public class Booking implements Serializable {
         this.value = value;
     }
 
-    public Budget getAssignedBudget() {
-        return assignedBudget;
+    public Long getAssigned_budget_id() {
+        return assigned_budget_id;
     }
 
-    public void setAssignedBudget(Budget assignedBudget) {
-        this.assignedBudget = assignedBudget;
+    public void setAssigned_budget_id(Long assigned_budget_id) {
+        this.assigned_budget_id = assigned_budget_id;
     }
 
-    public User getAssignedUser() {
-        return assignedUser;
+    public Long getAssigned_project_id() {
+        return assigned_project_id;
     }
 
-    public void setAssignedUser(User assignedUser) {
-        this.assignedUser = assignedUser;
+    public void setAssigned_project_id(Long assigned_project_id) {
+        this.assigned_project_id = assigned_project_id;
     }
 
-    public Project getAssignedProject() {
-        return assignedProject;
+    public Long getAssigned_bank_account_id() {
+        return assigned_bank_account_id;
     }
 
-    public void setAssignedProject(Project assignedProject) {
-        this.assignedProject = assignedProject;
+    public void setAssigned_bank_account_id(Long assigned_bank_account_id) {
+        this.assigned_bank_account_id = assigned_bank_account_id;
     }
 }

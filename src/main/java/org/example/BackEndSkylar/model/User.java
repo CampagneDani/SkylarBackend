@@ -3,6 +3,7 @@ package org.example.BackEndSkylar.model;
 import net.bytebuddy.implementation.bind.annotation.Default;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.*;
 
 @Entity
@@ -17,17 +18,6 @@ public class User implements Serializable {
     private String password;
     private String email;
     private String role;
-
-    @ManyToOne
-    @JoinColumn(name = "assigend_Bookings_id")
-    private Booking[] assigendBookings;
-
-    @ManyToOne
-    @JoinColumn(name= "assigned_Projects_id")
-    private Project[] assignedProjects;
-
-
-
 
 
     public User(){}

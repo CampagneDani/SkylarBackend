@@ -15,34 +15,19 @@ public class Budget implements Serializable {
     private Double value;
     private Boolean authorized;
 
-    @OneToOne
     @JoinColumn(name = "assigned_Project_id")
-    private Project assignedProject;
-
-    @ManyToOne
-    @JoinColumn(name = "assigned_Bookings_id")
-    private Booking[] assignedBookings;
-
+    private Long assigned_Project_id;
 
 
     public Budget(){}
 
-    public Budget(Long id, Date startDate, Date endDate, Double value, Boolean authorized, Project assignedProject, Booking[] assignedBookings) {
+    public Budget(Long id, Date startDate, Date endDate, Double value, Boolean authorized, Long assigned_Project_id) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.value = value;
         this.authorized = authorized;
-        this.assignedProject = assignedProject;
-        this.assignedBookings = assignedBookings;
-    }
-
-    public Booking[] getAssigendBookings() {
-        return assignedBookings;
-    }
-
-    public void setAssigendBookings(Booking[] assigendBookings) {
-        this.assignedBookings = assigendBookings;
+        this.assigned_Project_id = assigned_Project_id;
     }
 
     public Long getId() {
@@ -51,14 +36,6 @@ public class Budget implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Project getAssignedProject() {
-        return assignedProject;
-    }
-
-    public void setAssignedProject(Project assignedProject) {
-        this.assignedProject = assignedProject;
     }
 
     public Date getStartDate() {
@@ -91,5 +68,13 @@ public class Budget implements Serializable {
 
     public void setAuthorized(Boolean authorized) {
         this.authorized = authorized;
+    }
+
+    public Long getAssigned_Project_id() {
+        return assigned_Project_id;
+    }
+
+    public void setAssigned_Project_id(Long assigned_Project_id) {
+        this.assigned_Project_id = assigned_Project_id;
     }
 }
