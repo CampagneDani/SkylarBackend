@@ -13,12 +13,17 @@ public class BankAccount {
 
     private String bankAccountName;
 
+    @JoinColumn(name ="assigned_user_id")
+    private Long assignedUserId;
+
+
     public BankAccount(){}
 
-    public BankAccount(Long id, Double saldo, String bankAccountName) {
+    public BankAccount(Long id, Double saldo, String bankAccountName, Long assignedUserId) {
         this.id = id;
         this.saldo = saldo;
         this.bankAccountName = bankAccountName;
+        this.assignedUserId = assignedUserId;
     }
 
     public Long getId() {
@@ -43,5 +48,13 @@ public class BankAccount {
 
     public void setBankAccountName(String bankAccountName) {
         this.bankAccountName = bankAccountName;
+    }
+
+    public Long getAssignedUserId() {
+        return assignedUserId;
+    }
+
+    public void setAssignedUserId(Long assignedUserId) {
+        this.assignedUserId = assignedUserId;
     }
 }

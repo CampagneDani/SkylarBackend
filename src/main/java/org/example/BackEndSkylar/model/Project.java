@@ -13,30 +13,30 @@ public class Project implements Serializable {
     private String projectName;
     private String projectDescription;
 
-    @JoinColumn(name = "assigend_user_id")
-    private Long assigend_user_id;
+    @JoinColumn(name = "assigned_user_id")
+    private Long assignedUserId;
 
 
     public Project() {
     }
 
-    public Project(Long id, String projectName, String projectDescription, Long assigend_user_id) {
+    public Project(Long id, String projectName, String projectDescription, Long assignedUserId) {
         this.id = id;
         this.projectName = projectName;
         this.projectDescription = projectDescription;
-        this.assigend_user_id = assigend_user_id;
+        this.assignedUserId = assignedUserId;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getProjectName() {
         return projectName;
-    }
-
-    public Long getAssigend_user_id() {
-        return assigend_user_id;
-    }
-
-    public void setAssigend_user_id(Long assigend_user_id) {
-        this.assigend_user_id = assigend_user_id;
     }
 
     public void setProjectName(String projectName) {
@@ -51,11 +51,11 @@ public class Project implements Serializable {
         this.projectDescription = projectDescription;
     }
 
-    public Long getId() {
-        return id;
+    public Long getAssignedUserId() {
+        return assignedUserId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAssignedUserId(Long assignedUserId) {
+        this.assignedUserId = assignedUserId;
     }
 }

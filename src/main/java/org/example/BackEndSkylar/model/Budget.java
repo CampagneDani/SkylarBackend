@@ -16,22 +16,22 @@ public class Budget implements Serializable {
     private Boolean authorized;
 
     @JoinColumn(name = "assigned_Project_id")
-    private Long assigned_Project_id;
+    private Long assignedProjectId;
 
 
     public Budget(){}
 
-    public Budget(Long id, Date startDate, Date endDate, Double value, Boolean authorized, Long assigned_Project_id) {
+    public Long getId() {
+        return id;
+    }
+
+    public Budget(Long id, Date startDate, Date endDate, Double value, Boolean authorized, Long assignedProjectId) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.value = value;
         this.authorized = authorized;
-        this.assigned_Project_id = assigned_Project_id;
-    }
-
-    public Long getId() {
-        return id;
+        this.assignedProjectId = assignedProjectId;
     }
 
     public void setId(Long id) {
@@ -70,11 +70,11 @@ public class Budget implements Serializable {
         this.authorized = authorized;
     }
 
-    public Long getAssigned_Project_id() {
-        return assigned_Project_id;
+    public Long getAssignedProjectId() {
+        return assignedProjectId;
     }
 
-    public void setAssigned_Project_id(Long assigned_Project_id) {
-        this.assigned_Project_id = assigned_Project_id;
+    public void setAssignedProjectId(Long assignedProjectId) {
+        this.assignedProjectId = assignedProjectId;
     }
 }
