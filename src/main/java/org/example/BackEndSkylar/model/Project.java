@@ -2,6 +2,8 @@ package org.example.BackEndSkylar.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Project implements Serializable {
@@ -12,15 +14,15 @@ public class Project implements Serializable {
     private Long id;
     private String projectName;
     private String projectDescription;
-
+    @ManyToMany
     @JoinColumn(name = "assigned_user_id")
-    private Long assignedUserId;
+    private List<User> assignedUserId;
 
 
     public Project() {
     }
 
-    public Project(Long id, String projectName, String projectDescription, Long assignedUserId) {
+    public Project(Long id, String projectName, String projectDescription, List<User> assignedUserId) {
         this.id = id;
         this.projectName = projectName;
         this.projectDescription = projectDescription;
@@ -51,11 +53,11 @@ public class Project implements Serializable {
         this.projectDescription = projectDescription;
     }
 
-    public Long getAssignedUserId() {
+    public List<User> getAssignedUserId() {
         return assignedUserId;
     }
 
-    public void setAssignedUserId(Long assignedUserId) {
+    public void setAssignedUserId(List<User> assignedUserId) {
         this.assignedUserId = assignedUserId;
     }
 }
