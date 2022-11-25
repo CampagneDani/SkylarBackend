@@ -10,8 +10,8 @@ public class Project implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String projectName;
-    private String projectDescription;
+    private String name;
+    private String description;
 
     @JoinColumn(name = "assigned_user_id")
     private Long assignedUserId;
@@ -20,10 +20,10 @@ public class Project implements Serializable {
     public Project() {
     }
 
-    public Project(Long id, String projectName, String projectDescription, Long assignedUserId) {
+    public Project(Long id, String name, String description, Long assignedUserId) {
         this.id = id;
-        this.projectName = projectName;
-        this.projectDescription = projectDescription;
+        this.name = name;
+        this.description = description;
         this.assignedUserId = assignedUserId;
     }
 
@@ -35,20 +35,20 @@ public class Project implements Serializable {
         this.id = id;
     }
 
-    public String getProjectName() {
-        return projectName;
+    public String getName() {
+        return name;
     }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getProjectDescription() {
-        return projectDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProjectDescription(String projectDescription) {
-        this.projectDescription = projectDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getAssignedUserId() {
