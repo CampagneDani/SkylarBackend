@@ -2,6 +2,10 @@ package org.example.BackEndSkylar.model;
 
 import java.sql.*;
 
+/**
+ * This class is used to encrypt the password of users in the database via SQL commands
+ */
+
 public class DBFunction {
 
 
@@ -11,6 +15,8 @@ public class DBFunction {
     private static final String password = "root";
 
 
+
+    //Method to encrypt the password at adding a new user
     public static void securePW(User userPW){
 
         try {
@@ -26,7 +32,7 @@ public class DBFunction {
         }
 
     }
-
+    //Method to encrypt the given password from the front-end
     public static String comparePW(String loginPW){
         ResultSet rs;
         String rs1 ="";

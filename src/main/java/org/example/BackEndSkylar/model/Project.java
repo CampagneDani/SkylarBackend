@@ -5,6 +5,11 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * model of the projects with attributes projectname and projectdescription
+ * has getter/setter methods for every attribute
+ */
+
 @Entity
 public class Project implements Serializable {
 

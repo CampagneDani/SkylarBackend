@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
+/**
+ * part of the springboot mechanism to interact with the data given and gotten to/from the font-end via http-requests
+ * same for every other "Service" -class
+ */
+
 @Service
 public class BankAccountService {
 

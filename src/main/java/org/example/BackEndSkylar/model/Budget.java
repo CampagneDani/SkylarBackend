@@ -3,6 +3,12 @@ package org.example.BackEndSkylar.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
+/**
+ * model of the budgets with attributes startdate, enddate, value and authorized
+ * has getter/setter methods for every attribute
+ */
+
 @Entity
 public class Budget implements Serializable {
 

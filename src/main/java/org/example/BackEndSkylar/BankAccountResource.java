@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * part of the springboot mechanism to handle the crud command an http-requests
+ * same for every other "Resource" -class
+ */
+
+
 @RestController
 @RequestMapping("/bankAccount")
 public class BankAccountResource {
