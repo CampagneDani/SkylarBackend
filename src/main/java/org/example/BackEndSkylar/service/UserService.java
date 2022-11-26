@@ -1,6 +1,7 @@
 package org.example.BackEndSkylar.service;
 
 import org.example.BackEndSkylar.exception.UserNotFoundException;
+import org.example.BackEndSkylar.model.DBFunction;
 import org.example.BackEndSkylar.model.User;
 import org.example.BackEndSkylar.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,9 @@ public class UserService {
     }
 
     public User addUser(User user){
-        return userRepo.save(user);
+        userRepo.save(user);
+        DBFunction.securePW(user);
+        return findUserById(user.getId());
     }
 
     public List<User> findAllUser(){
