@@ -37,9 +37,9 @@ public class ProjectResource {
         return new ResponseEntity<>(newProject, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Project> updateProject(@RequestBody Project project){
-        Project updateProject = projectService.updateProject(project);
+    @PutMapping("/{id}")
+    public ResponseEntity<Project> updateProject(@PathVariable("id") Long id,@RequestBody Project project){
+        Project updateProject = projectService.updateProject(id, project);
         return new ResponseEntity<>(updateProject, HttpStatus.OK);
     }
 

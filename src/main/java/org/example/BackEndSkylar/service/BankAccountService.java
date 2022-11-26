@@ -36,7 +36,9 @@ public class BankAccountService {
         return bankAccountRepo.findBankAccountById(id).orElseThrow(() -> new BankAccountNotFoundException("BankAccount by id"+ id + "was not found"));
     }
 
-    public BankAccount updateBankAccount(BankAccount bankAccount){
+    public BankAccount updateBankAccount(Long id, BankAccount bankAccount){
+        BankAccount updatedBankAccount = bankAccount;
+        updatedBankAccount.setId(id);
         return bankAccountRepo.save(bankAccount);
     }
 

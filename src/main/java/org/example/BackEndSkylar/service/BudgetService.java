@@ -1,5 +1,6 @@
 package org.example.BackEndSkylar.service;
 
+import org.example.BackEndSkylar.BudgetResource;
 import org.example.BackEndSkylar.exception.BudgetNotFoundException;
 import org.example.BackEndSkylar.model.Budget;
 import org.example.BackEndSkylar.repo.BudgetRepo;
@@ -32,7 +33,9 @@ public class BudgetService {
         return budgetRepo.findBudgetById(id).orElseThrow(() -> new BudgetNotFoundException("Budget by id "+ id + "was not found"));
     }
 
-    public Budget updateBudget(Budget budget){
+    public Budget updateBudget(Long id, Budget budget){
+        Budget updatedBudget = budget;
+        updatedBudget.setId(id);
         return budgetRepo.save(budget);
     }
 

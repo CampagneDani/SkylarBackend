@@ -26,8 +26,6 @@ public class BackEndSkylarApplication {
 	}
 
 
-
-
 	@Bean
 	public FilterRegistrationBean corsFilter() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
