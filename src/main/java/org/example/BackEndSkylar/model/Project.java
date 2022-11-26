@@ -14,15 +14,15 @@ public class Project implements Serializable {
     private Long id;
     private String projectName;
     private String projectDescription;
-    @ManyToMany
+
     @JoinColumn(name = "assigned_user_id")
-    private List<User> assignedUserId;
+    private Long assignedUserId;
 
 
     public Project() {
     }
 
-    public Project(Long id, String projectName, String projectDescription, List<User> assignedUserId) {
+    public Project(Long id, String projectName, String projectDescription, Long assignedUserId) {
         this.id = id;
         this.projectName = projectName;
         this.projectDescription = projectDescription;
@@ -53,11 +53,11 @@ public class Project implements Serializable {
         this.projectDescription = projectDescription;
     }
 
-    public List<User> getAssignedUserId() {
+    public Long getAssignedUserId() {
         return assignedUserId;
     }
 
-    public void setAssignedUserId(List<User> assignedUserId) {
+    public void setAssignedUserId(Long assignedUserId) {
         this.assignedUserId = assignedUserId;
     }
 }
