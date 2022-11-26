@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * part of the springboot mechanism to handle the crud command an http-requests
+ * same for every other "Resource" -class
+ */
+
+
 @RestController
 @RequestMapping("/bankAccount")
 public class BankAccountResource {
@@ -37,9 +43,9 @@ public class BankAccountResource {
         return new ResponseEntity<>(newBankAccount, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<BankAccount> updateBankAccount(@RequestBody BankAccount bankAccount){
-        BankAccount updateBankAccount = bankAccountService.updateBankAccount(bankAccount);
+    @PutMapping("/{id}")
+    public ResponseEntity<BankAccount> updateBankAccount(@PathVariable("id") Long id, @RequestBody BankAccount bankAccount){
+        BankAccount updateBankAccount = bankAccountService.updateBankAccount(id, bankAccount);
         return new ResponseEntity<>(updateBankAccount, HttpStatus.OK);
     }
 

@@ -36,9 +36,9 @@ public class BudgetResource {
         return new ResponseEntity<>(newBudget, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Budget> updateUser(@RequestBody Budget budget){
-        Budget updateBudget = budgetService.updateBudget(budget);
+    @PutMapping("/{id}")
+    public ResponseEntity<Budget> updateUser(@PathVariable("id") Long id, @RequestBody Budget budget){
+        Budget updateBudget = budgetService.updateBudget(id, budget);
         return new ResponseEntity<>(updateBudget, HttpStatus.OK);
     }
 

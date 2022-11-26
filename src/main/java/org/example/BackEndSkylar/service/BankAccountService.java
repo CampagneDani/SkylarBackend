@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
+/**
+ * part of the springboot mechanism to interact with the data given and gotten to/from the font-end via http-requests
+ * same for every other "Service" -class
+ */
+
 @Service
 public class BankAccountService {
 
@@ -31,7 +36,9 @@ public class BankAccountService {
         return bankAccountRepo.findBankAccountById(id).orElseThrow(() -> new BankAccountNotFoundException("BankAccount by id"+ id + "was not found"));
     }
 
-    public BankAccount updateBankAccount(BankAccount bankAccount){
+    public BankAccount updateBankAccount(Long id, BankAccount bankAccount){
+        BankAccount updatedBankAccount = bankAccount;
+        updatedBankAccount.setId(id);
         return bankAccountRepo.save(bankAccount);
     }
 

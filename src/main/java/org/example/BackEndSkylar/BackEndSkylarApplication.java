@@ -11,6 +11,11 @@ import org.springframework.web.filter.CorsFilter;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+/**
+ * this is the main class, where the program is started
+ */
+
+
 @SpringBootApplication
 public class BackEndSkylarApplication {
 
@@ -19,8 +24,6 @@ public class BackEndSkylarApplication {
 
 
 	}
-
-
 
 
 	@Bean

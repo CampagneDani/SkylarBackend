@@ -5,6 +5,11 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
+/**
+ * model of the bookings with attributes date and value
+ * has getter/setter methods for every attribute
+ */
+
 @Entity
 public class Booking implements Serializable {
 

@@ -37,9 +37,9 @@ public class BookingResource {
         return new ResponseEntity<>(newBooking, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Booking> updateBooking(@RequestBody Booking booking){
-        Booking updateBooking = bookingService.updateBooking(booking);
+    @PutMapping("/{id}")
+    public ResponseEntity<Booking> updateBooking(@PathVariable("id") Long id, @RequestBody Booking booking){
+        Booking updateBooking = bookingService.updateBooking(id, booking);
         return new ResponseEntity<>(updateBooking, HttpStatus.OK);
     }
 

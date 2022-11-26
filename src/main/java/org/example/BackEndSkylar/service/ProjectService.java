@@ -1,6 +1,7 @@
 package org.example.BackEndSkylar.service;
 
 
+import org.example.BackEndSkylar.ProjectResource;
 import org.example.BackEndSkylar.exception.ProjectNotFoundException;
 import org.example.BackEndSkylar.model.Project;
 import org.example.BackEndSkylar.repo.ProjectRepo;
@@ -32,7 +33,9 @@ public class ProjectService {
         return projectRepo.findProjectById(id).orElseThrow(() -> new ProjectNotFoundException("Project by id "+ id + "was not found"));
     }
 
-    public Project updateProject(Project project){
+    public Project updateProject(Long id, Project project){
+        Project updatedProject = project;
+        updatedProject.setId(id);
         return projectRepo.save(project);
     }
 

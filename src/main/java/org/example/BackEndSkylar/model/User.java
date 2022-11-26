@@ -6,6 +6,11 @@ import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.*;
 
+/**
+ * model of the users with attributes username, password, email and role
+ * has getter/setter methods for every attribute
+ */
+
 @Entity
 public class User implements Serializable {
 

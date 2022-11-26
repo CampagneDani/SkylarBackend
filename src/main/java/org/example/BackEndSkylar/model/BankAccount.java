@@ -2,6 +2,11 @@ package org.example.BackEndSkylar.model;
 
 import javax.persistence.*;
 
+/**
+ * model of the bank accounts with attributes saldo and bankAccountName
+ * has getter/setter methods for every attribute
+ */
+
 @Entity
 public class BankAccount {
 

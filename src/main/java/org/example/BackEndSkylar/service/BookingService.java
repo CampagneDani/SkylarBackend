@@ -31,7 +31,9 @@ public class BookingService {
         return bookingRepo.findBookingById(id).orElseThrow(() -> new BookingNotFoundException("Booking by id "+ id + "was not found"));
     }
 
-    public Booking updateBooking(Booking booking){
+    public Booking updateBooking(Long id, Booking booking){
+        Booking updatedBooking = booking;
+        updatedBooking.setId(id);
         return bookingRepo.save(booking);
     }
 
