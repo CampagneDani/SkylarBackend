@@ -1,9 +1,6 @@
 package org.example.BackEndSkylar.service;
 
-import org.example.BackEndSkylar.model.AuthToken;
-import org.example.BackEndSkylar.model.Login;
-import org.example.BackEndSkylar.model.LoginResponse;
-import org.example.BackEndSkylar.model.User;
+import org.example.BackEndSkylar.model.*;
 import org.example.BackEndSkylar.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +28,7 @@ public class LoginService {
     public AuthToken login(Login loginData){
         Optional<User> user = this.userRepo.findUserByUsername(loginData.username);
         User properUser = user.get();
-        if (Objects.equals(properUser.getPassword(), loginData.password)){
+        if (Objects.equals(properUser.getPassword(), DBFunction.comparePW(loginData.password))){
             return new AuthToken(properUser.getUsername(),properUser.getPassword(),properUser.getRole());
         }
 
